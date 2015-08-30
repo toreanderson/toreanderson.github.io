@@ -1,0 +1,6 @@
+---
+published: true
+title: Test foo
+layout: post
+---
+Bar lol
