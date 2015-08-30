@@ -4,3 +4,5 @@ title: Test foo
 layout: post
 ---
 Bar lol
+
+Edit: Bar zoo
