@@ -2,7 +2,7 @@ excerpt_separator: ""
 pygments: true
 markdown: kramdown
 url: http://toreanderson.github.io
-title: Tore Anderson
-tagline: Tore Anderson thinking out loud
+title: ~tore
+tagline: Tore Anderson's blog
 description: Various notes and musings about technology. Probably mostly interesting for network engineers, server administrators and so on.
 paginate: 5
