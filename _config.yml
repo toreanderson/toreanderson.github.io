@@ -1,9 +1,7 @@
 excerpt_separator: ""
 pygments: true
-markdown: kramdown
-kramdown:
-  input: GFM
-url: http://toreanderson.github.io
+markdown: redcarpet
+url: http://blog.toreanderson.no
 title: ~tore
 tagline: Tore Anderson's blog
 description: Various musings about technology. Probably mostly interesting for network engineers, server administrators and so on. Send feedback to @toreanderson or tore@fud.no.
