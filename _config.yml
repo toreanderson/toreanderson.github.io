@@ -4,5 +4,5 @@ markdown: redcarpet
 url: http://blog.toreanderson.no
 title: ~tore
 tagline: Tore Anderson's blog
-description: Various musings about technology. Probably mostly interesting for network engineers, server administrators and so on. Send feedback to [@toreanderson](https://twitter.com/toreanderson) or [via e-mail](mailto:tore@fud.no).
+description: Various musings about technology. Probably mostly interesting for network engineers, server administrators and so on. Send feedback via Twitter (@toreanderson) or e-mail (tore@fud.no).
 paginate: 5
