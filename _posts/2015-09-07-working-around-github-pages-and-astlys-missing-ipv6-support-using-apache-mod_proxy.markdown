@@ -26,27 +26,27 @@ calling themselves ***Fast****ly* fails to support the protocol that was
 recently [reported by Facebook to yield about 30-40% faster time-to-last-byte
 web page load times than IPv4](https://youtu.be/An7s25FSK0U?t=18m53s). So in
 case anyone from Fastly is reading this, I suggest you either **a)** start
-supporting IPv6 ASAP, or failing that **b)** rename your CDN platform to
-something more appropriate - perhaps *Slowly*?
+supporting IPv6 ASAP, or failing that, **b)** rename your CDN platform to
+something more appropriate, like *Slowly*.
 
 # The workaround
 
-My [employer](http://www.redpill-linpro.com/) is kind enough to provids me with
+My [employer](http://www.redpill-linpro.com/) is kind enough to provide me with
 a virtual machine I can use for personal purposes. This server runs Linux,
 [Ubuntu](http://ubuntu.com) Trusty LTS to be specific. It is of course
-available over both IPv6 as well as IPv4 (via
+available over both IPv6 as well as IPv4 (using
 [SIIT-DC](https://tools.ietf.org/html/draft-ietf-v6ops-siit-dc)), so the idea
 here is to use it to provide a dual-stacked facade, thus concealing the fact
 that the GitHub Pages service doesn't support IPv6.
 
-As this server already hosts my [sorry excuse for a home
+As this server is already hosting my [sorry excuse for a home
 page](http://toreanderson.no/), it had already the
 [Apache](http://httpd.apache.org) web server software installed. Apache comes
 with [mod_proxy](https://httpd.apache.org/docs/current/mod/mod_proxy.html),
 which is perfectly suited for what I want to do.
 
-The first order of business is to enable `mod_proxy`. On Ubuntu, this is
-easiest done with the `a2enmod` utility, as the *root* user:
+The first order of business is to ensure the `mod_proxy` module is loaded. On
+Ubuntu, this is easiest done with the `a2enmod` utility, as the *root* user:
 
 ````console
 $ a2enmod proxy_http
@@ -67,26 +67,25 @@ the contents below, before reloading the configuration with the command
 
 ````apache
 <VirtualHost *:80>
-	ServerName blog.fud.no
-	ServerAlias blog.toreanderson.no
+	ServerName blog.toreanderson.no
+	ServerAlias blog.fud.no
 	ProxyPass "/" "http://toreanderson.github.io/"
 	ProxyPassReverse "/" "http://toreanderson.github.io/"
 </VirtualHost>
 ````
 
 The `ProxyPass` directive makes incoming HTTP requests from clients be
-forwarded to http://toreanderson.github.io/. The `ProxyPassReverse` ensures
-that any HTTP headers containing the string **http://toreanderson.github.io/**
-in the server response from GitHub Pages will be rewritten back to either
-**http://blog.fud.no/** or **http://blog.toreanderson.no** (depending on which
-of the two hostnames the client are communicating with in the first place). I'm
-not exactly sure if this is ever needed for GitHub Pages, but in any case it
-doesn't hurt to have it anyway.
+forwarded to http://toreanderson.github.io/. `ProxyPassReverse` ensures that
+any HTTP headers containing the string **http://toreanderson.github.io/** in
+the server response from GitHub Pages will be changed back to
+**http://blog.toreanderson.no/** (or **http://blog.fud.no/**). I'm not exactly
+sure if `ProxyPassReverse` is really needed for GitHub Pages, but it doesn't
+hurt to have it in the configuration anyway.
 
 The final order of business is to ensure that the two hostnames mentioned in
-the `ServerName` and `ServerAlias` directives exist in DNS and is pointing to
-the server. I did this by adding simply adding `CNAME` records that points to
-an already existing hostname with IPv4 `IN A` and IPv6 `IN AAAA` records:
+the `ServerName` and `ServerAlias` directives exist in DNS and are pointing to
+the server. I did this by adding simply adding `IN CNAME` records that points
+to an already existing hostname with IPv4 `IN A` and IPv6 `IN AAAA` records:
 
 ````console
 $ host -t CNAME blog.fud.no.
@@ -95,16 +94,18 @@ $ host -t CNAME blog.toreanderson.no.
 blog.toreanderson.no is an alias for fud.no.
 ````
 
-By using my own domain names, I am also making sure that my blog's URL is
-[secured using
+Another thing worth mentioning here: By using my own domain names, I am also
+making sure that my blog's URL is [secured using
 DNSSEC](http://dnssec-debugger.verisignlabs.com/blog.toreanderson.no), another
-important piece of technology in today's Internet that GitHub Pages and Fastly
-currently [neglect to
+important piece of Internet technology that GitHub Pages and Fastly currently
+[neglect to
 support](http://dnssec-debugger.verisignlabs.com/toreanderson.github.io).
 
-In any case, at this point in time http://blog.toreanderson.no/ is available
-over both IPv4 and IPv6 and I am therefore finally comfortable with letting
-people know that this blog actually exists. While the `mod_proxy` workaround is
+# Summary
+
+With the help of Apache `mod_proxy`, http://blog.toreanderson.no is now
+available over both IPv4 and IPv6. I am therefore finally comfortable with
+letting people know that this blog actually exists. While this workaround is
 far from ideal from a technical point of view, it is better than the
 alternative - having to wait an indeterminate amount of time for Fastly to
-dual-stack GitHub Pages and the rest of the sites they host on their CDN.
+dual-stack their CDN.
