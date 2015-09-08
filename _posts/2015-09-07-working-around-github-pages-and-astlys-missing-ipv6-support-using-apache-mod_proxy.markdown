@@ -56,7 +56,7 @@ Enabling module proxy_http.
 To activate the new configuration, you need to run:
   service apache2 restart
 # service apache2 restart
- * Restarting web server apache2                                       [ OK ]
+ * Restarting web server apache2                              [ OK ]
 ````
 
 The next order of business is to create a `VirtualHost` definition that uses
