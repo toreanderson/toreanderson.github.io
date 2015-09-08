@@ -50,10 +50,12 @@ does not appear to support IPv6 yet:
 
 ```
 test1
+test1-2
 ```
 
 ```console
 test2
+test2-2
 ```
 
 Given that it's 2015, that's rather disappointing, but I'm guessing I'll find a
