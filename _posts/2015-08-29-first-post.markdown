@@ -44,7 +44,7 @@ So far so good. The one thing that's missing, is IPv6 support. The GitHub Pages
 service, or more precisely its CDN provider [Fastly](https://www.fastly.com/),
 does not appear to support IPv6 yet:
 
-````console
+````
 $ host toreanderson.github.io
 toreanderson.github.io is an alias for github.map.fastly.net.
 github.map.fastly.net has address 185.31.17.133
