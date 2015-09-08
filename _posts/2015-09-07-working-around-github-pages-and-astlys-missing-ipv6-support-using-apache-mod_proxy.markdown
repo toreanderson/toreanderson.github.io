@@ -46,17 +46,17 @@ with [mod_proxy](https://httpd.apache.org/docs/current/mod/mod_proxy.html),
 which is perfectly suited for what I want to do.
 
 The first order of business is to ensure the `mod_proxy` module is loaded. On
-Ubuntu, this is easiest done with the `a2enmod` utility, as the *root* user:
+Ubuntu, this is easiest done using the `a2enmod` utility:
 
 ````console
-$ a2enmod proxy_http
+# a2enmod proxy_http
 Considering dependency proxy for proxy_http:
 Enabling module proxy.
 Enabling module proxy_http.
 To activate the new configuration, you need to run:
   service apache2 restart
-$ service apache2 restart
- * Restarting web server apache2                                         [ OK ]
+# service apache2 restart
+ * Restarting web server apache2                                       [ OK ]
 ````
 
 The next order of business is to create a `VirtualHost` definition that uses
