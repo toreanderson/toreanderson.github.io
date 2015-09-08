@@ -5,7 +5,7 @@ layout: post
 ---
 # The problem
 
-As I noted in my [previous post](/2015/08/29/first.post.html), [GitHub
+As I noted in my [previous post](/2015/08/29/first-post.html), [GitHub
 Pages](https://pages.github.com/) (just like [GitHub](https://github.com/)
 itself) does not support IPv6. This is because GitHub Pages' CDN provider,
 [Fastly](https://www.fastly.com/), doesn't support it:
