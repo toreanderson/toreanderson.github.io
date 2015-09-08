@@ -10,7 +10,7 @@ Pages](https://pages.github.com/) (just like [GitHub](https://github.com/)
 itself) does not support IPv6. This is because GitHub Pages' CDN provider,
 [Fastly](https://www.fastly.com/), doesn't support it:
 
-````sh
+````console
 $ host toreanderson.github.io
 toreanderson.github.io is an alias for github.map.fastly.net.
 github.map.fastly.net has address 185.31.17.133
@@ -48,14 +48,14 @@ which is perfectly suited for what I want to do.
 The first order of business is to enable `mod_proxy`. On Ubuntu, this is
 easiest done with the `a2enmod` utility, as the *root* user:
 
-````sh
-# a2enmod proxy_http
+````console
+$ a2enmod proxy_http
 Considering dependency proxy for proxy_http:
 Enabling module proxy.
 Enabling module proxy_http.
 To activate the new configuration, you need to run:
   service apache2 restart
-# service apache2 restart
+$ service apache2 restart
  * Restarting web server apache2                                         [ OK ]
 ````
 
@@ -88,7 +88,7 @@ the `ServerName` and `ServerAlias` directives exist in DNS and is pointing to
 the server. I did this by adding simply adding `CNAME` records that points to
 an already existing hostname with IPv4 `IN A` and IPv6 `IN AAAA` records:
 
-````sh
+````console
 $ host -t CNAME blog.fud.no.
 blog.fud.no is an alias for fud.no.
 $ host -t CNAME blog.toreanderson.no.
@@ -104,7 +104,7 @@ support](http://dnssec-debugger.verisignlabs.com/toreanderson.github.io).
 
 In any case, at this point in time http://blog.toreanderson.no/ is available
 over both IPv4 and IPv6 and I am therefore finally comfortable with letting
-people know that this blog actually exists. While the solution is far from
-ideal from a technical point of view, it is better than the alternative than
-having to wait an unknown amount of time for Fastly to dual-stack GitHub Pages
-and the rest of the sites they host on their CDN.
+people know that this blog actually exists. While the `mod_proxy` workaround is
+far from ideal from a technical point of view, it is better than the
+alternative - having to wait an indeterminate amount of time for Fastly to
+dual-stack GitHub Pages and the rest of the sites they host on their CDN.
