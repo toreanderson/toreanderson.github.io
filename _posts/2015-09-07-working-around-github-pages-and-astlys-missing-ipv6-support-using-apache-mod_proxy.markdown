@@ -1,11 +1,11 @@
 ---
-published: false
+published: true
 title: Working around GitHub Pages and Fastly's missing IPv6 support using Apache mod_proxy
 layout: post
 ---
 # The problem
 
-As I noted in my [previous post](/2015/08/29/first-post.html), [GitHub
+As I noted in my [previous post](/2015/08/29/first.post.html), [GitHub
 Pages](https://pages.github.com/) (just like [GitHub](https://github.com/)
 itself) does not support IPv6. This is because GitHub Pages' CDN provider,
 [Fastly](https://www.fastly.com/), doesn't support it:
@@ -104,8 +104,9 @@ support](http://dnssec-debugger.verisignlabs.com/toreanderson.github.io).
 # Summary
 
 With the help of Apache `mod_proxy`, http://blog.toreanderson.no is now
-available over both IPv4 and IPv6. I am therefore finally comfortable with
-letting people know that this blog actually exists. While this workaround is
-far from ideal from a technical point of view, it is better than the
-alternative - having to wait an indeterminate amount of time for Fastly to
-dual-stack their CDN.
+[available over both IPv4 and
+IPv6](http://validador.ipv6.br/index.php?site=blog.toreanderson.no&lang=en). I
+am therefore now comfortable with letting people know that this blog actually
+exists. While this workaround is far from ideal from a technical point of view,
+it is better than the alternative - having to wait an indeterminate amount of
+time for Fastly to get around to dual-stacking their CDN.
