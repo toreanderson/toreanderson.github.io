@@ -23,11 +23,11 @@ knowledge supported IPv6 even before Fastly was founded, so it's not like their
 lack of IPv6 could be explained by having legacy and difficult to upgrade
 IPv4-only internal infrastructure. I find it rather ironic that a provider
 calling themselves ***Fast****ly* fails to support the protocol that was
-recently [reported by Facebook to yield about 30-40% faster time-to-last-byte
-web page load times than IPv4](https://youtu.be/An7s25FSK0U?t=18m53s). So in
-case anyone from Fastly is reading this, I suggest you either **a)** start
-supporting IPv6 ASAP, or failing that, **b)** rename your CDN platform to
-something more appropriate, like *Slowly*.
+recently [reported by Facebook to yield 30-40% faster time-to-last-byte web
+page load times than IPv4](https://youtu.be/An7s25FSK0U?t=18m53s). So in case
+anyone from Fastly is reading this, I suggest you either ***a)*** start
+supporting IPv6 ASAP, or failing that, ***b)*** rename your CDN platform to
+something more appropriate, like ***Slow****ly*.
 
 # The workaround
 
@@ -92,6 +92,10 @@ $ host -t CNAME blog.fud.no.
 blog.fud.no is an alias for fud.no.
 $ host -t CNAME blog.toreanderson.no.
 blog.toreanderson.no is an alias for fud.no.
+$ host -t A fud.no.
+fud.no has address 87.238.60.0
+$ host -t AAAA fud.no.
+fud.no has IPv6 address 2a02:c0:1001:100::145
 ````
 
 Another thing worth mentioning here: By using my own domain names, I am also
