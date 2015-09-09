@@ -75,12 +75,14 @@ the contents below, before reloading the configuration with the command
 ````
 
 The `ProxyPass` directive makes incoming HTTP requests from clients be
-forwarded to http://toreanderson.github.io/. `ProxyPassReverse` ensures that
-any HTTP headers containing the string **http://toreanderson.github.io/** in
-the server response from GitHub Pages will be changed back to
-**http://blog.toreanderson.no/** (or **http://blog.fud.no/**). I'm not exactly
-sure if `ProxyPassReverse` is really needed for GitHub Pages, but it doesn't
-hurt to have it in the configuration anyway.
+forwarded to [http://toreanderson.github.io/](http://toreanderson.github.io/).
+`ProxyPassReverse` ensures that any HTTP headers containing the string
+**http://toreanderson.github.io/** in the server response from GitHub Pages
+will be changed back to
+**[http://blog.toreanderson.no/](http://blog.toreanderson.no/)** (or
+**[http://blog.fud.no/](http://blog.fud.no/)**). I'm not exactly sure if
+`ProxyPassReverse` is really needed for GitHub Pages, but it doesn't hurt to
+have it in the configuration anyway.
 
 The final order of business is to ensure that the two hostnames mentioned in
 the `ServerName` and `ServerAlias` directives exist in DNS and are pointing to
@@ -107,8 +109,9 @@ support](http://dnssec-debugger.verisignlabs.com/toreanderson.github.io).
 
 # Summary
 
-With the help of Apache `mod_proxy`, http://blog.toreanderson.no is now
-[available over both IPv4 and
+With the help of Apache `mod_proxy`,
+[http://blog.toreanderson.no](http://blog.toreanderson.no) is now [available
+over both IPv4 and
 IPv6](http://validador.ipv6.br/index.php?site=blog.toreanderson.no&lang=en). I
 am therefore now comfortable with letting people know that this blog actually
 exists. While this workaround is far from ideal from a technical point of view,
