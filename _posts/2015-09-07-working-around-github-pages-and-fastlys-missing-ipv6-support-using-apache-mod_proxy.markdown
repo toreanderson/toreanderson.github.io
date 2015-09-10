@@ -3,7 +3,7 @@ published: true
 title: Working around GitHub Pages and Fastly's missing IPv6 support using Apache mod_proxy
 layout: post
 ---
-# The problem
+## The problem
 
 As I noted in my [previous post](/2015/08/29/first-post.html), [GitHub
 Pages](https://pages.github.com/) (just like [GitHub](https://github.com/)
@@ -29,7 +29,7 @@ anyone from Fastly is reading this, I suggest you either ***a)*** start
 supporting IPv6 ASAP, or failing that, ***b)*** rename your CDN platform to
 something more appropriate, like ***Slow****ly*.
 
-# The workaround
+## The workaround
 
 My [employer](http://www.redpill-linpro.com/) is kind enough to provide me with
 a virtual machine I can use for personal purposes. This server runs Linux,
@@ -78,11 +78,10 @@ The `ProxyPass` directive makes incoming HTTP requests from clients be
 forwarded to [http://toreanderson.github.io/](http://toreanderson.github.io/).
 `ProxyPassReverse` ensures that any HTTP headers containing the string
 **http://toreanderson.github.io/** in the server response from GitHub Pages
-will be changed back to
-**[http://blog.toreanderson.no/](http://blog.toreanderson.no/)** (or
-**[http://blog.fud.no/](http://blog.fud.no/)**). I'm not exactly sure if
-`ProxyPassReverse` is really needed for GitHub Pages, but it doesn't hurt to
-have it in the configuration anyway.
+will be changed back to **http://blog.toreanderson.no/** (or
+**http://blog.fud.no/**). I'm not exactly sure if `ProxyPassReverse` is really
+needed for GitHub Pages, but it doesn't hurt to have it in the configuration
+anyway.
 
 The final order of business is to ensure that the two hostnames mentioned in
 the `ServerName` and `ServerAlias` directives exist in DNS and are pointing to
@@ -107,7 +106,7 @@ important piece of Internet technology that GitHub Pages and Fastly currently
 [neglect to
 support](http://dnssec-debugger.verisignlabs.com/toreanderson.github.io).
 
-# Summary
+## Summary
 
 With the help of Apache `mod_proxy`,
 [http://blog.toreanderson.no](http://blog.toreanderson.no) is now [available
