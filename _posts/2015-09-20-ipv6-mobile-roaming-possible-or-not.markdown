@@ -21,7 +21,7 @@ DNS64/NAT64). All Telenor subscribers can configure their devices to use these
 APNs; IPv6 is a fully supported production service in Telenor's mobile network.
 
 During these years I have travelled a lot. I have been to much of Europe, as
-well as in several other contries including Canada, Japan, and USA. Wherever I
+well as in several other countries including Canada, Japan, and USA. Wherever I
 went, roaming with IPv6 has in my experience been one of those things that
 *Just Works*. Therefore it surprised me greatly to hear that during the [APNIC
 40](https://conference.apnic.net/40) conference, [Telstra
