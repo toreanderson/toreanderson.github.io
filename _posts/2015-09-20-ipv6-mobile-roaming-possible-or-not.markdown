@@ -16,20 +16,24 @@ service.
 
 In 2014, I changed to [Telenor Norway](http://www.telenor.no). Telenor provides
 two [APNs](https://en.wikipedia.org/wiki/Access_Point_Name) that support IPv6:
-`telenor.mobil`, which supports only the `IPV6` PDP context type, as well as
-DNS64/NAT64; and Telenor's default APN `telenor.smart` which supports the `IP`,
-`IPV6`, and `IPV4V6` PDP context types. This APN uses
-[CGN](https://en.wikipedia.org/wiki/Carrier-grade_NAT) for IPv4, and does not
-provide DNS64/NAT64. All Telenor subscribers can configure their devices to use
-these APNs; IPv6 is a fully supported production service in Telenor's mobile
-network.
 
-During these years I have travelled a lot. I have been to much of Europe, as
-well as in several other countries including Canada, Japan, and USA. Wherever I
-went, roaming with IPv6 has been one of those things that *Just Works*.
-Therefore I was greatly surprised to hear that during the [APNIC
-40](https://conference.apnic.net/40) conference, [Telstra
-Australia](https://www.telstra.com.au/)'s [Sunny
+* `telenor.smart`, Telenor's default APN. It supports the `IP`, `IPV6`, and
+  `IPV4V6` PDP context types. `telenor.smart` uses
+  [CGN](https://en.wikipedia.org/wiki/Carrier-grade_NAT) for IPv4 Internet
+  access, and does not provide DNS64/NAT64 service.
+* `telenor.mobil`, which supports only the `IPV6` PDP context type, as well as
+  DNS64/NAT64.
+
+IPv6 is a fully supported production service in Telenor's mobile network,
+meaning that any Telenor subscriber can configure his or her device to use IPv6
+with one of these APNs, if it isn't already doing so by default.
+
+During the years I've had IPv6 service from my mobile providers, I have
+travelled a lot. I have been to much of Europe, as well as in several other
+countries including Canada, Japan, and USA. Wherever I went, roaming with IPv6
+has been one of those things that *Just Works*. Therefore I was greatly
+surprised to hear that during the [APNIC 40](https://conference.apnic.net/40)
+conference, [Telstra Australia](https://www.telstra.com.au/)'s [Sunny
 Yeung](https://www.linkedin.com/in/xevious)
 [stated](https://twitter.com/apnic/status/641470146968600576) that *«until
 every carrier has activated IPv6 there is no way to activate IPv6 for
