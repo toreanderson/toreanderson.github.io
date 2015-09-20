@@ -46,8 +46,8 @@ Fesler](https://twitter.com/jasonfesler)'s excellent
 [test-ipv6.com](http://ds.test-ipv6.com) site to prove beyond any doubt that
 **IPv6 roaming** ***does*** **work**, as demonstrated below:
 
-![test-ipv6.com screenshot from roaming Jolla phone](/_images/20150920-jolla-test-ipv6-screenshot.jpg)
-![Console screenshot from roaming Jolla phone](/_images/20150920-jolla-console-screenshot.jpg)
+![test-ipv6.com screenshot from roaming Jolla phone](/images/20150920-jolla-test-ipv6-screenshot.jpg)
+![Console screenshot from roaming Jolla phone](/images/20150920-jolla-console-screenshot.jpg)
 
 The two screenshots above are from my [Jolla Phone](http://www.jolla.com) when
 connected to the `telenor.smart` APN using an dual-stack `IPV4V6` PDP context.
@@ -58,7 +58,7 @@ there is no indication that I am actually roaming in either screenshot. You'll
 just have to take my word for it; I simply don't know which command is used to
 show the roaming status in Jolla's [Sailfish OS](https://sailfishos.org/).)
 
-![Screenshot from roaming laptop](/_images/20150920-laptop-screenshot.png)
+![Screenshot from roaming laptop](/images/20150920-laptop-screenshot.png)
 
 This screenshot shows roaming using the built-in cellular modem in my laptop.
 This modem is not exactly state of the art, so it does not support the
