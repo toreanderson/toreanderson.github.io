@@ -76,5 +76,5 @@ that you haven't found the way to do it yet, the efforts your colleagues in
 Telenor Norway demonstrates that there clearly is ***a*** way. I know several
 of the folks involved in Telenor's IPv6 efforts, they are a friendly bunch - do
 not hesitate to contact me if you want me to introduce you to them! I'm certain
-that they would heppily help you finding your way towards deploying IPv6 in
+that they would gladly help you finding *your* way towards deploying IPv6 in
 Telstra's mobile network.
