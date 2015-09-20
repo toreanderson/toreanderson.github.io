@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 title: IPv6 mobile roaming: Possible or not?
 layout: post
 ---
