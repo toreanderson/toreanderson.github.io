@@ -40,9 +40,9 @@ every carrier has activated IPv6 there is no way to activate IPv6 for
 international roaming»*. Sunny couldn't possibly be right, could he? Had I just
 *imagined* that IPv6 roaming worked for me?
 
-As luck would have it, an upcoming business trip to Sweden soon gave me the
-opportunity double-check whether or not IPv6 roaming truly works. To that end,
-I used [Jason Fesler](https://twitter.com/jasonfesler)'s excellent
+An upcoming business trip to Sweden soon gave me the opportunity double-check
+whether or not IPv6 roaming truly works. To that end, I used [Jason
+Fesler](https://twitter.com/jasonfesler)'s excellent
 [test-ipv6.com](http://ds.test-ipv6.com) site to prove beyond any doubt that
 **IPv6 roaming** ***does*** **work**, as demonstrated below:
 
