@@ -1,18 +1,18 @@
 ---
 published: true
-title: 'IPv6 mobile roaming: Possible or not?'
+title: 'IPv6 mobile roaming: possible or not?'
 layout: post
 ---
 
 Since 2012 I have been voting with my wallet, opting to only use mobile
-providers that provide me with IPv6 connectivity. To begin with, I was a
-customer of [Network Norway](https://en.wikipedia.org/wiki/Network_Norway).
-They were kind enough to include me in their IPv6-only pilot with
+providers that give me IPv6 connectivity. To begin with, I was a customer of
+[Network Norway](https://en.wikipedia.org/wiki/Network_Norway). They were kind
+enough to include me in their IPv6-only pilot with
 [DNS64](http://tools.ietf.org/html/rfc6147) and
-[NAT64](http://tools.ietf.org/html/rfc6146) . Unfortunately, Network Norway's
+[NAT64](http://tools.ietf.org/html/rfc6146). Unfortunately, Network Norway's
 fate was to be acquired multiple times, causing their IPv6 pilot to lose
-momentum due to loss of key personnel. IPv6 has yet to become a production
-service.
+momentum due to the loss of key technical personnel. The IPv6 pilot has not yet
+transitioned to a production service.
 
 In 2014, I changed to [Telenor Norway](http://www.telenor.no). Telenor provides
 two [APNs](https://en.wikipedia.org/wiki/Access_Point_Name) that support IPv6:
