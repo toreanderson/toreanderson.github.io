@@ -57,7 +57,7 @@ laptop. This modem is not exactly state of the art, so it does not support the
 dual-stack `IPV4V6` PDP context type. Therefore, I instead use a single-stack
 `IPV6` PDP context towards the `telenor.mobil` APN. You can also see that I am
 using [clatd](https://github.com/toreanderson/clatd) to set up a
-[464XLAT]((http://tools.ietf.org/html/rfc6877) CLAT interface. This provides
+[464XLAT](http://tools.ietf.org/html/rfc6877) CLAT interface. This provides
 any legacy IPv4-only applications running on my laptop with *seemingly* native
 IPv4 connectivity they can use to communicate with the IPv4 Internet.
 
