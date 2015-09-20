@@ -63,10 +63,10 @@ IPv4 connectivity they can use to communicate with the IPv4 Internet.
 
 Sunny, I hope you consider this post very good news. After all, it might mean
 that deploying IPv6 in Telstra's mobile network isn't the impossibility that
-your APNIC 40 statement suggests you currently think. While it's evident that
-you haven't found the way to do it yet, the efforts of operators like Telenor
-Norway demonstrates that there clearly is **a** way. I know several of the
-folks involved in Telenor's IPv6 efforts, they are a friendly bunch - do not
-hesitate to contact me if you want me to introduce you to them! I'm certain
+your APNIC 40 statement suggests you currently think it is. While it's evident
+that you haven't found the way to do it yet, the efforts your colleagues in
+Telenor Norway demonstrates that there clearly is **a** way. I know several of
+the folks involved in Telenor's IPv6 efforts, they are a friendly bunch - do
+not hesitate to contact me if you want me to introduce you to them! I'm certain
 that they would heppily help you finding the way to deploying IPv6 in Telstra's
 mobile network.
