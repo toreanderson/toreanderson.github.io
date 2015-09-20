@@ -5,7 +5,7 @@ layout: post
 ---
 
 Since 2012 I have been voting with my wallet, opting to only use mobile
-providers who provide me with IPv6 connectivity. To begin with, I was a
+providers that provide me with IPv6 connectivity. To begin with, I was a
 customer of [Network Norway](https://en.wikipedia.org/wiki/Network_Norway).
 They were kind enough to include me in their IPv6-only pilot with
 [DNS64](http://tools.ietf.org/html/rfc6147) and
