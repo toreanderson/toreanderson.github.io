@@ -1,6 +1,6 @@
 ---
 published: false
-title: IPv6 mobile roaming: Possible or not?
+title: 'IPv6 mobile roaming: Possible or not?'
 layout: post
 ---
 
