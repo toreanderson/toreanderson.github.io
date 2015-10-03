@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: 'Homenet - the future of home networking'
 layout: post
 ---
@@ -10,12 +10,13 @@ Internet connection, which is plugged in to the
 gateway](https://en.wikipedia.org/wiki/Residential_gateway).  The gateway will
 typically feature a few wired Ethernet ports and a wireless access point, which
 are in most cases bridged together to form a single layer-2
-[*LAN*](https://en.wikipedia.org/wiki/Local_area_network) segment.  The LAN
-segment is numbered using [private IPv4
-addresses](https://en.wikipedia.org/wiki/Private_network). The gateway then
+[*LAN*](https://en.wikipedia.org/wiki/Local_area_network) segment. The LAN
+segment is configured with [private IPv4
+addresses](https://en.wikipedia.org/wiki/Private_network), and the gateway
 performs [IPv4
 NAT](https://en.wikipedia.org/wiki/Network_address_translation#One-to-many_NAT),
-so that the hosts on the LAN segment can communicate with the IPv4 Internet.
+so that the hosts and devices on the LAN segment can communicate with the IPv4
+Internet.
 
 If the requirements of the home network are equally simple, this will work well
 enough for most users. However, the moment you start adding more functionality,
@@ -45,16 +46,16 @@ charter](http://datatracker.ietf.org/wg/homenet/charter/):
 > among relatively small "residential home" networks. For example, an obvious
 > trend in home networking is the proliferation of networking technology in an
 > increasingly broad range and number of devices.  [...]
-> 
+>
 > Home networks need to provide the tools to handle these situations in a
 > manner accessible to all users of home networks. Manual configuration is
 > rarely, if at all, possible, as the necessary skills and in some cases even
 > suitable management interfaces are missing.
-> 
+>
 > The purpose of this working group is to focus on this evolution, in
 > particular as it addresses the introduction of IPv6, by developing an
-> architecture addressing this full scope of requirements: 
-> 
+> architecture addressing this full scope of requirements:
+>
 > o prefix configuration for routers<br/>
 > o managing routing<br/>
 > o name resolution<br/>
@@ -79,7 +80,7 @@ So far, the Homenet working group has published one RFC titled [IPv6 Home
 Networking Architecture Principles](http://tools.ietf.org/html/rfc7368), and is
 currently actively working on [a number of other
 Internet-Drafts](http://tools.ietf.org/wg/homenet/) that describe the
-nitty-gritty details of how it all fits together. 
+nitty-gritty details of how it all fits together.
 
 ## Running code: the Hnet project
 
