@@ -3,6 +3,6 @@ pygments: true
 markdown: redcarpet
 url: http://blog.toreanderson.no
 title: ~tore
-tagline: Tore Anderson's blog
+tagline: Tore Anderson's technology blog
 description: Various musings about technology. Probably mostly interesting for network engineers, server administrators and so on. Send feedback via Twitter (@toreanderson) or e-mail (tore@fud.no).
 paginate: 5
