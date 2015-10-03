@@ -12,11 +12,10 @@ typically feature a few wired Ethernet ports and a wireless access point, which
 are in most cases bridged together to form a single layer-2
 [*LAN*](https://en.wikipedia.org/wiki/Local_area_network) segment. The LAN
 segment is configured with [private IPv4
-addresses](https://en.wikipedia.org/wiki/Private_network), and the gateway
-performs [IPv4
-NAT](https://en.wikipedia.org/wiki/Network_address_translation#One-to-many_NAT),
-so that the hosts and devices on the LAN segment can communicate with the IPv4
-Internet.
+addresses](https://en.wikipedia.org/wiki/Private_network); in order to let the
+hosts and devices on the LAN segment to communicate with the IPv4 Internet, the
+gateway will perform [IPv4
+NAT](https://en.wikipedia.org/wiki/Network_address_translation#One-to-many_NAT).
 
 If the requirements of the home network are equally simple, this will work well
 enough for most users. However, the moment you start adding more functionality,
