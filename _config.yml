@@ -1,5 +1,5 @@
 excerpt_separator: ""
-highlighter: true
+pygments: true
 markdown: redcarpet
 url: http://blog.toreanderson.no
 title: ~tore
