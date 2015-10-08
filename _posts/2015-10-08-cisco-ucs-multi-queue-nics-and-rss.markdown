@@ -8,8 +8,8 @@ The other day one of my colleagues at [Redpill
 Linpro](http://www.redpill-linpro.com) asked me to help him figure out why a
 web cache server started responding slowly during a traffic peak. My colleague
 was scratching his head over the problem, because although the traffic level
-was unusually high for the server in question, it was nowhere near saturating
-the server's 10 Gb/s of available network bandwidth:
+was unusually high for the server in question, it was nowhere close to
+saturating the server's 10 Gb/s of available network bandwidth:
 
 <a rel="graphs" href="/images/20151008-bandwidth_graph.png"
    class="fancybox" title="Graph of network bandwidth">
@@ -18,9 +18,9 @@ the server's 10 Gb/s of available network bandwidth:
 
 The server was running the [Varnish Cache](https://www.varnish-cache.org/), a
 truly excellent piece of software which, when running on modern hardware, will
-easily serve 10 Gb/s of web traffic without breaking a sweat. Futhermore, the
-CPU graph revealed that lack of processing capacity had not been an issue; the
-server in question, a [Cisco UCS B200
+easily serve 10 Gb/s of web traffic without breaking a sweat. The CPU graph
+confirmed that lack of processing capacity had not been an issue; the server in
+question, a [Cisco UCS B200
 M3](http://www.cisco.com/c/en/us/products/servers-unified-computing/ucs-b200-m3-blade-server/index.html),
 had been mostly idling during the problematic period:
 
