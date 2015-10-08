@@ -1,0 +1,7 @@
+---
+published: true
+title: 'Test - ignore'
+layout: post
+---
+
+Ignore...
