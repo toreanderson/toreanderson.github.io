@@ -16,7 +16,7 @@ the server's 10 Gb/s of available network bandwidth:
 <img src="/images/20151008-bandwidth_graph.png"/>
 </a>
 
-The server was running the [Varnish Cache](https://www.varnish-cache.org/), an
+The server was running the [Varnish Cache](https://www.varnish-cache.org/), a
 truly excellent piece of software that when running on modern hardware will
 easily serve 10 Gb/s of web traffic without breaking a sweat. Futhermore, the
 CPU graph revealed that lack of processing capacity had not been an issue; the
@@ -39,7 +39,7 @@ going on - the network interface had been dropping quite a few inbound packets:
 
 That certainly explained the slowness - dropped packets lead to TCP timeouts
 and subsequent retransmissions, which will be rather damaging to interactive
-and latency-sensitive application protocols such as HTTP. My collegue had
+and latency-sensitive application protocols such as HTTP. My colleague had
 correctly identifed *what* had happened - the remaining question was *why*?
 
 ## Diagnosing the root cause of the dropped packets
@@ -196,7 +196,7 @@ ucs1-osl3-B /org/eth-policy # set arfs accelaratedrfs enabled
 Activating the changes at this point is only a matter of issuing the standard
 `commit-buffer` command. That said, do be aware that a reboot will be required
 to activate these changes, which in turn mean that any service profile that's
-using this ethernet adpater policy and has a [maintenance
+using this ethernet adapter policy and has a [maintenance
 policy](https://supportforums.cisco.com/document/122691/understanding-and-configuring-cisco-ucs-maintenance-policy)
 set to `immediate` will ***instantly reboot***.
 
@@ -279,9 +279,9 @@ attempting a boot with 256+256 queues and a single vNIC is probably a good way
 to determine the actual hardware limitations (and, by extension, the optimal
 default values for that particular adapter model).
 
-In any case, realising the default behaviour was kind of like coming home after
-having bought a new sports car with a V8 engine, only to discover that the
-manufacturer had only bothered to install a spark plug in *one* out its of
+In any case, discovering the default UCS behaviour was kind of like coming home
+after having bought a new sports car with a V8 engine, only to discover that
+the manufacturer had only bothered to install a spark plug in *one* out its of
 eight cylinders. It's truly a *terrible* default! If someone at Cisco ever
 reads this, I'd strongly suggest that the default behaviour would be simply to
 enable the maximum number of queues supported by the hardware in question.
