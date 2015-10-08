@@ -46,7 +46,7 @@ correctly identifed *what* had happened - the remaining question was *why*?
 
 Checking the output from the diagnostic commands `ip -s -s link show dev eth5`
 and `ethtool -S eth5` on the server in question revealed that every single one
-of the lost RX packets were ***missed*** due to ***rx\_no\_bufs***. In other
+of the dropped packets were ***missed*** due to ***rx\_no\_bufs***. In other
 words, inbound packets were arriving faster than the server had been able to
 process them.
 
