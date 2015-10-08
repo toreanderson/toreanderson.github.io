@@ -47,8 +47,8 @@ correctly identifed *what* had happened - the remaining question was *why*?
 Checking the output from the diagnostic commands `ip -s -s link show dev eth5`
 and `ethtool -S eth5` on the server in question revealed that every single one
 of the dropped packets were ***missed*** due to ***rx\_no\_bufs***. In other
-words, inbound packets were arriving faster than the server had been able to
-process them.
+words, inbound packets had been arriving faster than the server had been able
+to process them.
 
 Taking a closer look at the CPU graph revealed a subtle hint: the `softirq`
 field had exceeded 100%. While it is not possible to tell with certainty from
