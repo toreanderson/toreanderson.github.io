@@ -17,7 +17,7 @@ the server's 10 Gb/s of available network bandwidth:
 </a>
 
 The server was running the [Varnish Cache](https://www.varnish-cache.org/), a
-truly excellent piece of software that when running on modern hardware will
+truly excellent piece of software that, when running on modern hardware, will
 easily serve 10 Gb/s of web traffic without breaking a sweat. Futhermore, the
 CPU graph revealed that lack of processing capacity had not been an issue; the
 server in question, a [Cisco UCS B200
