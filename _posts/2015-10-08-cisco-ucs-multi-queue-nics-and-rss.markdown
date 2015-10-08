@@ -82,7 +82,7 @@ It fortunately turned out that the network adapter in question, a [Cisco UCS
 VIC
 1240](http://www.cisco.com/c/en/us/products/interfaces-modules/ucs-virtual-interface-card-1240/index.html),
 ***is*** a multi-queue NIC - but this functionality is for some unfathomable
-reason is disabled by the default ethernet adapter policy:
+reason disabled by the default ethernet adapter policy:
 
 ````
 ucs1-osl3-B# scope org
@@ -150,7 +150,7 @@ adapter policy. Hardware in a [Cisco
 UCS](http://www.cisco.com/c/en/us/products/servers-unified-computing/index.html)
 environment can take on different personalities based on software
 configuration, and the number of queues in a network adapter is no exception.
-The below commands shows how you can increasing both the number of receive and
+The below commands shows how you can increase both the number of receive and
 transmit queues:
 
 ````
