@@ -72,9 +72,9 @@ Only a *single* receive queue! In other words, the server's network adapter did
 not appear to be [multi-queue
 NIC](https://en.wikipedia.org/wiki/Network_interface_controller#MULTIQUEUE).
 This in turn meant that every incoming packet during the problematic period
-would have been processed by *single* CPU core, which would in all likelihood
-was completely overloaded while all the other 39 CPU cores was just sitting
-there with almost nothing to do.
+would have been processed by *single* CPU core. This CPU core would in all
+likelihood have been completely overloaded, while all the other 39 CPU cores
+were just sitting there with almost nothing to do.
 
 ## Enabling multiple queues and Receive-side Scaling
 
@@ -164,7 +164,7 @@ However, in order to actually make use of the multiple receive queues, it is
 also necessary to enable [Receive-side scaling
 (RSS)](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/networking/scaling.txt#n20).
 RSS is what ensures that the network adapter will uniformly distribute incoming
-packets across its multiple receive queues, which in turn allows is routed to
+packets across its multiple receive queues, which in turn are routed to
 separate CPU cores. In addition, it is necessary to configure the number of
 completion queues to the sum of configured receive and transmit queues, and the
 number of interrupts to the number of completion queues plus 2:
@@ -191,17 +191,17 @@ default if you care about performance. Thus:
 ucs1-osl3-B /org/eth-policy # set arfs accelaratedrfs enabled 
 ````
 
-(Yes, *accelaratedrfs* is spelling expected by the UCS CLI.)
+(Yes, *accelaratedrfs* is the spelling expected by the UCS CLI.)
 
 Activating the changes at this point is only a matter of issuing the standard
 `commit-buffer` command. That said, do be aware that a reboot will be required
-to activate these changes, which in turn mean that any service profile that's
+to activate these changes, which in turn means that any service profile that's
 using this ethernet adapter policy and has a [maintenance
 policy](https://supportforums.cisco.com/document/122691/understanding-and-configuring-cisco-ucs-maintenance-policy)
 set to `immediate` will ***instantly reboot***.
 
-After the reboot, we can see that there the ethernet adapter now has the
-requested number of queues and interrupts available:
+After the reboot, we can see that the ethernet adapter now has the requested
+number of queues and interrupts available:
 
 ````
 tore@ucstest:~$ awk '/eth5/ {print $NF}' /proc/interrupts 
@@ -242,18 +242,18 @@ distributions.
 
 You might wonder why I enabled only eight queues for each direction, given that
 the blade in question has 40 CPU cores. Well, I *did* try to enable more, and
-while is indeed possible to configure up to a maximum of 256 transmit and
+while it is indeed possible to configure up to a maximum of 256 transmit and
 receive queues in a UCS ethernet adapter policy, checking `/proc/interrupts`
-after rebooting will reveal that only 8+8 was created anyway. I assume that
-this is a hardware limitation. I also tested this with a older [B200
+after rebooting will reveal that only 8+8 were created anyway. I assume that
+this is a hardware limitation. I also tested this with an older [B200
 M2](http://www.cisco.com/c/en/us/products/servers-unified-computing/ucs-b200-m2-blade-server/index.html)
 blade with an
 [M81KR](http://www.cisco.com/c/en/us/products/interfaces-modules/ucs-m81kr-virtual-interface-card/index.html)
 network adapter, and the limitation was exactly the same - only eight queues
-per direction was created.
+per direction were created.
 
 I have to say that a maximum of eight receive queues is far from impressive, as
-other common 10 Gb network adapters supports many more. The [Intel
+other common 10 Gb network adapters support many more. The [Intel
 82599](http://www.intel.com/content/www/us/en/embedded/products/networking/82599-10-gigabit-ethernet-controller-family.html)
 supports [128 receive/transmit
 queues](http://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/82599-10-gbe-controller-brief.pdf),
@@ -261,28 +261,28 @@ for example. That said, having eight receive queues can make a world of
 difference compared to having just the default single one.
 
 I also found out that it is not safe to configure the maximum possible 256
-transmit and receive queues in the ethernet adapter policy, while simply
-relying on the system to adjust the effective number down to what the is
-actually supported by the hardware. That approach works only for service
-profiles with a single vNIC; the service profile fails to associate if it has
-two or more vNICs with such a policy. Looking at the FSM status while
-attempting this, the B200 M2 with the M81KR adapter gets stuck with an error
-message of `Out of CQ resources`, while the B200 M3 with the VIC 1240 would get
-`Adapter configDataNicCb(): vnicEthCreate failed`. Attempting to reboot them in
-this state doesn't work either, they just got stuck - the M2 blade entered the
-EFI shell, while the M3 entered the BIOS Setup utility.
+transmit and receive queues in the ethernet adapter policy. One might assume
+that doing so would cause the system to simply adjust the effective number down
+to the maximum supported by hardware. However, that approach works only for
+service profiles with a single vNIC; the service profile fails to associate if
+it contains two or more vNICs with such a policy. Looking at the FSM status
+while attempting this, the B200 M2 with the M81KR adapter gets stuck with an
+error message of `Out of CQ resources`, while the B200 M3 with the VIC 1240
+would get `Adapter configDataNicCb(): vnicEthCreate failed`. Attempting to
+reboot them in this state didn't work either, they just got stuck - the M2
+blade entered the EFI shell, while the M3 entered the BIOS Setup utility.
 
 Thus my conclusion is that the optimal number of receive and transmit queues to
 configure in the default ethernet adapter policy is 8+8 for any server
-conaining an the M81KR or VIC 1240 adapter. For other adapter models,
-attempting a boot with 256+256 queues and a single vNIC is probably a good way
-to determine the actual hardware limitations (and, by extension, the optimal
+containing the M81KR or VIC 1240 adapter. For other adapter models, attempting
+a boot with 256+256 queues and a single vNIC is probably a good way to
+determine the actual hardware limitations (and, by extension, the optimal
 default values for that particular adapter model).
 
 In any case, discovering the default UCS behaviour was kind of like coming home
 after having bought a new sports car with a V8 engine, only to discover that
 the manufacturer had only bothered to install a spark plug in *one* out its of
-eight cylinders. It's truly a *terrible* default! If someone at Cisco ever
+eight cylinders. It is truly a *terrible* default! If someone at Cisco ever
 reads this, I'd strongly suggest that the default behaviour would be simply to
 enable the maximum number of queues supported by the hardware in question.
 That's the only way to unleash the full performance of the hardware, and it is
