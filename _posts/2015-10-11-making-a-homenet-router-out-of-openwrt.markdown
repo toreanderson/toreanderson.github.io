@@ -40,6 +40,21 @@ inadvertently locking yourself out of your device. While it's certainly
 possible to make do without, the following instructions will assume that you're
 using such a laptop.
 
+## The home network: bridged or routed?
+
+Like most residential gateways, OpenWrt comes by default with a single logical
+*LAN* interface which is just layer-2 bridge consisting of all the wired and
+wireless interfaces in the router, excluding the *WAN* interface. That is
+however not how a Homenet router is meant to operate. In Homenet, layer-3 is
+king: each interface has its own isolated network segment, complete with its
+own IP prefixes. Standard layer-3 routing is used whenever hosts on different
+segments need to communicate.
+
+In this post, I'll set it up the proper Homenet way. That said, a Homenet
+router also supports traditional bridged LAN segments, so you can also set it
+up that way if the idea of not having full layer-2 connectivity between all the
+hosts in your home network scares you.
+
 ## Step 1: Install the Hnet software suite
 
 OpenWrt 15.05 *Chaos Calmer* doesn't come with the Hnet software installed by
@@ -160,21 +175,6 @@ upstream network, that is):
 class="fancybox" title="Confirm Internet connectivity via the new interface">
 <img width="100%" src="/images/20151011-12-network-interfaces.png"/></a>
 
-## The home network: bridged or routed?
-
-Like most residential gateways, OpenWrt comes with a single logical *LAN*
-interface which is just layer-2 bridge consisting of all the wired and wireless
-interfaces in the router, excluding the *WAN* interface. That is however not
-how a Homenet router is meant to operate. In Homenet, layer-3 is king: each
-interface has its own isolated network segment, complete with its own IP
-prefixes. Standard layer-3 routing is used whenever hosts on different segments
-need to communicate.
-
-In this post, I'll set it up the proper Homenet way. That said, a Homenet
-router also supports traditional bridged LAN segments, so you can also set it
-up that way if the idea of not having full layer-2 connectivity between all the
-hosts in your home network scares you.
-
 ## Step 4: Convert the wireless interfaces to Homenet
 
 We'll first need to remove the wireless interfaces from the default non-Homenet
@@ -284,7 +284,7 @@ Apply**.
 class="fancybox" title="Add one VLAN per physical port, all tagged on the CPU
 port"><img width="100%" src="/images/20151011-21-network-switch.png"/></a>
 
-## Step 5: Creat Homenet interfaces for the LAN ports
+## Step 5: Create Homenet interfaces for the LAN ports
 
 Return to
 [Network/Interfaces](http://openwrt.home/cgi-bin/luci/admin/network/network).
