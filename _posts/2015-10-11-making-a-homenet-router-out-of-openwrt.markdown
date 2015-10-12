@@ -1,16 +1,16 @@
 ---
-published: false
+published: true
 title: 'Making a Homenet router out of OpenWrt'
 layout: post
 ---
 
-This post provides step-by-step instructions on how to take a residential
-gateway running [OpenWrt](https://openwrt.org), installing the software from
-the [Hnet project](http://www.homewrt.org) on it, and finally converting it to
-be a fully-fledged [Homenet](http://tools.ietf.org/wg/homenet/) router. The
-post is quite long, but don't let that put you off - it's only because I go
-through the process in minute detail. The entire conversion process shouldn't
-take you more than 10-15 minutes.
+This post provides a step-by-step guide on how to take a residential gateway
+running [OpenWrt](https://openwrt.org), installing the software from the [Hnet
+project](http://www.homewrt.org) on it, and finally converting it to be a
+full-fledged [Homenet](http://tools.ietf.org/wg/homenet/) router. The post is
+quite long, but don't let that put you off - it's only because I go through the
+process in minute detail. The entire conversion process shouldn't take you more
+than 10-15 minutes.
 
 Unlike the Hnet project's [own setup
 instructions](http://www.homewrt.org/doku.php?id=run-conf), I'll use only the
@@ -40,36 +40,36 @@ inadvertently locking yourself out of your device. While it's certainly
 possible to make do without, the following instructions will assume that you're
 using such a laptop.
 
-If you lock yourself out of your device anyway, look for a physical button
-(often only reachable using, e.g., a paperclip) labelled *Reset* or something
-similar. You can usually make the router revert to its default configuration by
-keeping it pressed for 10-15 seconds. If that doesn't work out for you, consult
-the [documentation on OpenWrt's failsafe
+If you end up locking yourself out of your device anyway, look for a physical
+button labelled *Reset* or something similar. You can usually make the router
+revert to its default configuration by keeping it pressed for 10-15 seconds. If
+that doesn't work out for you, consult the [documentation on OpenWrt's failsafe
 mode](http://wiki.openwrt.org/doc/howto/generic.failsafe).
 
 ## The home network: bridged or routed?
 
 Like most residential gateways, OpenWrt comes by default with a single logical
-*LAN* interface which is just layer-2 bridge consisting of all the wired and
+*LAN* interface which is just a layer-2 bridge consisting of all the wired and
 wireless interfaces in the router, excluding the *WAN* interface. That is
 however not how a Homenet router is meant to operate. In Homenet, layer-3 is
 king: each interface has its own isolated network segment, complete with its
 own IP prefixes. Standard layer-3 routing is used whenever hosts on different
 segments need to communicate.
 
-In this post, I'll set it up the proper Homenet way. That said, a Homenet
-router also supports traditional bridged LAN segments, so you can also set it
-up that way if the idea of not having full layer-2 connectivity between all the
-hosts in your home network scares you.
+In this guide, I'll set it up the proper Homenet way. That said, a Homenet
+router also supports traditional bridged LAN segments. This approach can be
+used if you want to keep full layer-2 connectivity between all the hosts in
+your home network.
 
 ## Step 1: Install the Hnet software suite
 
 OpenWrt 15.05 *Chaos Calmer* doesn't come with the Hnet software installed by
 default, so our first order of business is to install it from the Internet.
 Connect your router's *WAN* port to an Internet-connected network (such as
-directly to your ISP or your pre-existing home LAN), and your laptop to one of
-the router's *LAN* ports using wired Ethernet. You should now be able to access
-LuCI, OpenWrt's web interface, at [http://openwrt.lan](http://openwrt.lan):
+directly to your ISP or your pre-existing home LAN), and connect your laptop to
+one of the router's *LAN* ports using wired Ethernet. You should now be able to
+access LuCI, OpenWrt's web interface, at
+[http://openwrt.lan](http://openwrt.lan):
 
 <a rel="walkthrough" href="/images/20151011-01-luci-login.png" class="fancybox"
 title="OpenWrt 15.05 login screen"><img width="100%"
@@ -142,20 +142,20 @@ class="fancybox" title="Clear the IPv6 ULA-Prefix field"><img width="100%"
 src="/images/20151011-09-network-interfaces.png"/></a>
 
 Why is this necessary? Hnet generates and maintains its own ULA prefixes
-independently of the **IPv6 ULA-Prefix** setting. However, due to a bug Homenet
-interfaces created in LuCI will end up with *two* ULA prefixes assigned; the
-native Homenet-maintained one in addition to the non-Homenet one specified in
-**IPv6 ULA-Prefix**. Removing the non-Homenet setting successfully works around
-this bug.
+independently of the **IPv6 ULA-Prefix** setting. However, due to a bug,
+Homenet interfaces created in LuCI will end up with *two* ULA prefixes
+assigned; the native Homenet-maintained one in addition to the non-Homenet one
+specified in **IPv6 ULA-Prefix**. Removing the non-Homenet setting successfully
+works around this bug.
 
 ## Step 3: Convert the WAN interface to Homenet
 
 Stay on the
-[Network/Interfaces](http://openwrt.lan/cgi-bin/luci/admin/network/network),
-page and make a note of which physical interface the default non-Homenet *WAN*
-and *WAN6* interfaces are using (*eth1* in my case), then click the **Delete**
-button in to remove them. You should now be left only with the default
-non-Homenet *LAN* interface:
+[Network/Interfaces](http://openwrt.lan/cgi-bin/luci/admin/network/network)
+page and make a note of which physical port the default *WAN* and *WAN6*
+interfaces are using (*eth1* in my case), then click their **Delete** buttons
+to remove them. You should now be left only with the default non-Homenet *LAN*
+interface:
 
 <a rel="walkthrough" href="/images/20151011-10-network-interfaces.png"
 class="fancybox" title="After removal of the default WAN and WAN6 interfaces">
@@ -163,7 +163,7 @@ class="fancybox" title="After removal of the default WAN and WAN6 interfaces">
 
 Once they're gone, click **Add new interface...**. You can give it any name you
 want, except for *LAN*, *WAN*, or *WAN6*. Hnet will automatically detect the
-role of an interface, as long as it does not have any of those special names.
+role of an interface as long as it does not have any of those special names.
 (I'm calling mine *e0*, short for *Ethernet port 0*.) Choose the protocol
 *Automatic Homenet (HNCP)*, set it to cover the same physical interface as the
 old *WAN*/*WAN6* interface did, and finally click **Submit** and then **Save &
@@ -174,9 +174,8 @@ class="fancybox" title="Create a new Homenet interface"><img width="100%"
 src="/images/20151011-11-create-interface.png"/></a>
 
 If everything went well, you should be returned to the interface list, and
-after a few second your new Homenet interface should show as having acquired
-connectivity from the upstream network (assuming it's still connected to an
-upstream network, that is):
+after a few seconds your new Homenet interface should show as having acquired
+connectivity from the upstream network:
 
 <a rel="walkthrough" href="/images/20151011-12-network-interfaces.png"
 class="fancybox" title="Confirm Internet connectivity via the new interface">
@@ -207,7 +206,7 @@ want, except for *LAN*/*WAN*/*WAN6* as discussed above. You might also want to
 take some time to explore the various tabs here in order to configure security
 and encryption, wireless band and channel, country, and so on.
 
-If your device has multiple wireless interface, I strongly suggest that you
+If your device has multiple wireless interfaces, I strongly suggest that you
 also give them different *ESSID*s. This is because most wireless clients will
 assume that all access points using the same ESSID connect to the same layer-2
 segment. That's not the case in Homenet, so if a client roams from one AP to
@@ -295,8 +294,8 @@ port"><img width="100%" src="/images/20151011-21-network-switch.png"/></a>
 
 Return to
 [Network/Interfaces](http://openwrt.home/cgi-bin/luci/admin/network/network).
-Delete the old *LAN* interface the same way you did with *WAN* and *WAN6*, so
-you're left only with the new Homenet interfaces you've created so far:
+Delete the old *LAN* interface the same way you did with *WAN* and *WAN6*. Now
+you should only be left with the new Homenet interfaces you've created so far:
 
 <a rel="walkthrough" href="/images/20151011-22-network-interfaces.png"
 class="fancybox" title="Old non-Homenet LAN interface has been removed"><img
@@ -305,7 +304,7 @@ width="100%" src="/images/20151011-22-network-interfaces.png"/></a>
 What now remains to be done is to create Homenet interfaces for each of the
 VLANs in the switch. This is done in the same way I created the *e0* interface
 earlier; first, click **Add new interface...**. In the next view, give it a
-name of your liking (except *LAN*/*WAN*/*WAN6*), chose the *Automatic Homenet
+name of your liking (except *LAN*/*WAN*/*WAN6*), choose the *Automatic Homenet
 (HNCP)* protocol, set it to cover one of the VLAN interfaces you just created,
 and click **Submit** and then **Save & Apply**.
 
@@ -341,13 +340,13 @@ interesting, but at least it should show your router, its interfaces, and any
 IP prefixes it has been assigned. You can click on various nodes in the graph
 to get more details in JSON format.
 
-Assuming you followed my advice on interface naming, none of the interfaces in
-your router now have pre-determined roles such as *WAN* or *LAN*. You may, for
+If you followed my advice on interface naming, your router's interfaces should
+no longer have pre-determined roles such as *WAN* or *LAN*. You may, for
 example, connect your upstream Internet connection to the port labelled *LAN 3*
-and a regular host to the port labelled *WAN* if you want - it will work just
-as fine as the other way around. This ability alone will give Homenet an
-unprecedented level of «plug&play-ness» compared to the regular residential
-gateways in sale today.
+and a regular host to the port labelled *WAN* - it will work just as fine as
+the other way around. This ability alone will give Homenet an unprecedented
+level of «plug&play-ness» compared to the regular residential gateways in sale
+today.
 
 If you own several residential gateways supported by OpenWrt, try converting
 them all to Homenet routers and connect them to each other in arbitrary ways -
@@ -359,8 +358,8 @@ stacking and DHCPv6-PD cascading! You shall <u>not</u> be missed. That said,
 hosts or non-Homenet routers connecting to the Homenet will be granted a DHCPv6
 Prefix Delegation if they ask for one.
 
-It is also possible to connect your Homenet to multiple ISPs, from different
-routers if you so prefer, and it should all *Just Work*. Well, in theory anyway
-- I haven't yet tested Homenet with multiple ISPs myself. If you do, please let
-me know how it worked out. You can reach me, and the Hnet team itself, at
-`#hnet-hackers` at [freenode](http://freenode.net/).
+It is also possible to connect your Homenet to multiple ISPs, and it should all
+*Just Work*, even if the ISPs are connected to different Homenet routers.
+Well, in theory anyway - I haven't yet tested Homenet with multiple ISPs
+myself. If you do, please let me know how it worked out. You can reach me and
+the Hnet team itself at `#hnet-hackers` at [freenode](http://freenode.net/).
