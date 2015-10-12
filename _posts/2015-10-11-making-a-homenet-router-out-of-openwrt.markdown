@@ -40,6 +40,13 @@ inadvertently locking yourself out of your device. While it's certainly
 possible to make do without, the following instructions will assume that you're
 using such a laptop.
 
+If you lock yourself out of your device anyway, look for a physical button
+(often only reachable using, e.g., a paperclip) labelled *Reset* or something
+similar. You can usually make the router revert to its default configuration by
+keeping it pressed for 10-15 seconds. If that doesn't work out for you, I
+recommend you look for recovery instructions on your device's page in the
+OpenWrt Wiki.
+
 ## The home network: bridged or routed?
 
 Like most residential gateways, OpenWrt comes by default with a single logical
