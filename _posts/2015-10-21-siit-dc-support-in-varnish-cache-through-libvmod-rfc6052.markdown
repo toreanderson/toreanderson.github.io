@@ -37,7 +37,7 @@ is `64:ff9b::/96`, the resulting IPv6 packet will have a source address of
 `64:ff9b::198.51.100.42`, by the way.)
 
 The translated IPv6 packet then gets routed through the IPv6 data centre
-network, until it reaches the web site's Varnish Cache. Varnish responds to it
+network until it reaches the web site's Varnish Cache. Varnish responds to it
 as it would with any other native IPv6 packet. The response gets routed to the
 nearest SIIT-DC Border Relay, where it gets translated back to IPv4 and finally
 routed back to the IPv4-only client. There is full bi-directional connectivity
@@ -51,7 +51,7 @@ it](https://ripe69.ripe.net/archives/video/186/) held at the
 
 ## What's the problem, then?
 
-From Varnish' point of view, the translated IPv4 client looks the same as a
+From Varnish's point of view, the translated IPv4 client looks the same as a
 native IPv6 one.  SIIT-DC hides the fact that the client is in reality using
 IPv4. The implication is that the
 [VCL](https://www.varnish-cache.org/docs/3.0/reference/vcl.html) variable
@@ -59,7 +59,7 @@ IPv4. The implication is that the
 IPv4 address `198.51.100.42`.
 
 If you don't use the `client.ip` variable for anything, then there's no problem
-at all. If on the other hand you *do* use `client.ip` for something, and that
+at all. If, on the other, hand you *do* use `client.ip` for something, and that
 something expects to work on literal IPv4 addresses, then there's a problem.
 For example, a [IP
 geolocation](https://en.wikipedia.org/wiki/Geolocation_software) library is
@@ -139,8 +139,8 @@ sub vcl_recv {
 ````
 
 We're naturally providing *libvmod-rfc6052* as
-[FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) software,
-in the hope that it will be useful to the Varnish and IPv6 communities.
+[FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) software in
+the hope that it will be useful to the Varnish and IPv6 communities.
 
 If you try it out, don't hesitate to share your experiences with us. Should you
 stumble across any bugs or have any suggestions, head over to the
