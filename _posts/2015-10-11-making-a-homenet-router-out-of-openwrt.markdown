@@ -265,9 +265,9 @@ switch, which in turn has a single interface connected to the "CPU" where
 OpenWrt runs. The following figure from the OpenWrt Wiki illustrates the
 architecture:
 
-<a href="http://wiki.openwrt.org/_media/media/toh/netgear/wndr3700-c.png"
-class="fancybox" title="Netgear WNDR3700v2 architecture"><img width="100%"
-src="http://wiki.openwrt.org/_media/media/toh/netgear/wndr3700-c.png"/></a>
+<a href="/images/20151011-wndr3700-arch.png" class="fancybox" title="Netgear
+WNDR3700v2 architecture"><img width="100%"
+src="/images/20151011-wndr3700-arch.png"/></a>
 
 I'll use VLANs to make each of the four external LAN ports their own Homenet
 interface. This is done on the
