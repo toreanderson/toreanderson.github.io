@@ -40,8 +40,8 @@ topology"><img src="/images/20151102-dhcpv6-topology.png"/></a>
 
 Our current IPv4-only network boot infrastructure relies heavily on using
 Ethernet [MAC addresses](https://en.wikipedia.org/wiki/MAC_address) to
-distinguish between clients. Being able to continue to do will make the
-introduction of of IPv6 support quick and easy. We would therefore like for the
+distinguish between clients. Being able to continue to do so will make the
+introduction of IPv6 support quick and easy. We would therefore like for the
 implementation to support the DHCPv6 [Client Link-Layer Address
 Option](http://tools.ietf.org/html/rfc6939).
 
@@ -87,30 +87,30 @@ Disappointingly enough, none of the tested implementations were able to do
 this.  *dhcpv6* will by default listen on all available interfaces, but it does
 not detect new interfaces showing up after it has started.
 
-The other three implementations all require that the listening interfaces to be
+The other three implementations all require that the listening interfaces be
 configured explicitly.
 
 ### Desired capability 3: Detecting IPv6 addresss changing during runtime
 
-Only *WIDE-DHCPv6* was able to do this. It appears to check the what the local
+Only *WIDE-DHCPv6* was able to do this. It appears to check what the local
 address on the interface is every time it relays a packet, so it always sets
 the `link address` field in the relayed DHCPv6 packet correctly.
 
 The other three implementations read in the global address (or lack thereof)
-for each interface when they start up, and does not notice any changes. Thus,
-there is a risk that the `link address` field in their relayed packets is set
+for each interface when they start, and do not notice any changes. Thus, there
+is a risk that the `link address` field in their relayed packets is set
 incorrectly.
 
 ### Desired capability 4: Coping with route to DHCPv6 server changing
 
 Only *dhcpv6* supports this without any weirdness. The address of the DHCPv6
 server is specified with the `-su` command line option, and packets are relayed
-to with following a standard routing lookup.
+to it using a standard routing lookup.
 
-*ISC DHCP* and *WIDE-DHCPv6* behave rather in a rather bizarre way. They both
-require that the interface facing the DHCPv6 server is explicitly specified on
-the command line, but for some reason they completely ignore it and instead use
-a standard routing lookup to reach the server.
+*ISC DHCP* and *WIDE-DHCPv6* behave in a rather bizarre way. They both require
+that the interface facing the DHCPv6 server is explicitly specified on the
+command line, but for some reason they completely ignore it and instead use a
+standard routing lookup to reach the server.
 
 *Dibbler* also requires that the upstream interfaces are explicitly configured.
 If there is no route to the DHCPv6 server on one of these interfaces, it will
@@ -132,7 +132,7 @@ Yes! Every tested implementation qualifies.
 
 ### Desired capability 6: Actively maintained
 
-Only *Dibbler* and *ISC DHCP* appears to be. According to its own homepage,
+Only *Dibbler* and *ISC DHCP* appear to be. According to its own homepage,
 *dhcpv6* was discontinued in 2009. *WIDE-DHCPv6* has not seen any release since
 2008.
 
