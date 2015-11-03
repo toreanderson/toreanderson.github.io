@@ -122,7 +122,7 @@ log the following error for each DHCPv6 request:
 That said, it is possible to simply configure both `eth0` and `eth1` as
 upstream interfaces. This will ensure all requests are correctly relayed
 regardless of which interface has the active route to the DHCPv6 server. That
-said, I'm only awarding halv a point to *Dibbler* here, both due to the
+said, I'm only awarding half a point to *Dibbler* here, both due to the
 clunkyness of the workaround and the constant stream of error messages it will
 result in.
 
