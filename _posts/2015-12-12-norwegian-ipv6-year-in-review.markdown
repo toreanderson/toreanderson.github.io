@@ -38,7 +38,7 @@ It is worth noting that other large content providers are also measuring IPv6
 usage in Norway, and their measurements appear to confirm that my numbers are
 in the right ballpark:
 [Akamai](https://www.stateoftheinternet.com/trends-visualizations-ipv6-adoption-ipv4-exhaustion-global-heat-map-network-country-growth-data.html#countries)
-currently reports 7% deployment, while
+currently reports 7% adoption, while
 [Google](http://www.google.com/intl/en/ipv6/statistics.html#tab=per-country-ipv6-adoption&tab=per-country-ipv6-adoption)
 reports 7.94%.
 
@@ -98,8 +98,8 @@ however.
 ### Zooming in on Telenor
 
 Telenor uses two distinct IPv6 prefixes, allowing me to make two graphs: One
-for their mobile subscribers, and another all their wired broadband subscribers
-(i.e., cable, DSL, and fibre).
+for their mobile subscribers, and another for all their wired broadband
+subscribers (i.e., cable, DSL, and fibre).
 
 <a href="/images/20151212-telenor.png" class="fancybox" title="Share of
 Norwegian traffic coming from IPv6-enabled Telenor subscribers (mobile
