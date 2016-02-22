@@ -36,7 +36,7 @@ a virtual machine I can use for personal purposes. This server runs Linux,
 [Ubuntu](http://ubuntu.com) Trusty LTS to be specific. It is of course
 available over both IPv6 as well as IPv4 (using
 [SIIT-DC](https://tools.ietf.org/html/draft-ietf-v6ops-siit-dc)), so the idea
-here is to use it to provide a dual-stacked façade, thus concealing the fact
+here is to use it to provide a dual-stacked facade, thus concealing the fact
 that the GitHub Pages service doesn't support IPv6.
 
 As this server is already hosting my [sorry excuse for a home
