@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: 'IPv6-only data centre RFCs published'
 layout: post
 ---
