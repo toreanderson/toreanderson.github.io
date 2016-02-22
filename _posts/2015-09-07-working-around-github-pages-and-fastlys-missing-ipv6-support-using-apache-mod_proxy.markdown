@@ -73,35 +73,3 @@ the contents below, before reloading the configuration with the command
 	ProxyPassReverse "/" "http://toreanderson.github.io/"
 </VirtualHost>
 ````
-
-The `ProxyPass` directive makes incoming HTTP requests from clients be
-forwarded to [http://toreanderson.github.io/](http://toreanderson.github.io/).
-`ProxyPassReverse` ensures that any HTTP headers containing the string
-**http://toreanderson.github.io/** in the server response from GitHub Pages
-will be changed back to **http://blog.toreanderson.no/** (or
-**http://blog.fud.no/**). I'm not exactly sure if `ProxyPassReverse` is really
-needed for GitHub Pages, but it doesn't hurt to have it in the configuration
-anyway.
-
-The final order of business is to ensure that the two hostnames mentioned in
-the `ServerName` and `ServerAlias` directives exist in DNS and are pointing to
-the server. I did this by adding simply adding `IN CNAME` records that points
-to an already existing hostname with IPv4 `IN A` and IPv6 `IN AAAA` records:
-
-````console
-$ host -t CNAME blog.fud.no.
-blog.fud.no is an alias for fud.no.
-$ host -t CNAME blog.toreanderson.no.
-blog.toreanderson.no is an alias for fud.no.
-$ host -t A fud.no.
-fud.no has address 87.238.60.0
-$ host -t AAAA fud.no.
-fud.no has IPv6 address 2a02:c0:1001:100::145
-````
-
-Another thing worth mentioning here: By using my own domain names, I am also
-making sure that my blog's URL is [secured using
-DNSSEC](http://dnssec-debugger.verisignlabs.com/blog.toreanderson.no), another
-important piece of Internet technology that GitHub Pages and Fastly currently
-[neglect to
-support](http://dnssec-debugger.verisignlabs.com/toreanderson.github.io).
