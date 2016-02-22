@@ -105,14 +105,3 @@ DNSSEC](http://dnssec-debugger.verisignlabs.com/blog.toreanderson.no), another
 important piece of Internet technology that GitHub Pages and Fastly currently
 [neglect to
 support](http://dnssec-debugger.verisignlabs.com/toreanderson.github.io).
-
-## Summary
-
-With the help of Apache `mod_proxy`,
-[http://blog.toreanderson.no](http://blog.toreanderson.no) is now [available
-over both IPv4 and
-IPv6](http://validador.ipv6.br/index.php?site=blog.toreanderson.no&lang=en). I
-am therefore now comfortable with letting people know that this blog actually
-exists. While this workaround is far from ideal from a technical point of view,
-it is better than the alternative - having to wait an indeterminate amount of
-time for Fastly to get around to dual-stacking their CDN.
