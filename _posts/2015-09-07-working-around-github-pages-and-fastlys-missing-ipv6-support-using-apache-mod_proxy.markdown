@@ -64,12 +64,3 @@ The next order of business is to create a `VirtualHost` definition that uses
 by creating a new file `/etc/apache2/sites-enabled/http_blog.fud.no.conf` with
 the contents below, before reloading the configuration with the command
 `apache2ctl graceful`.
-
-````apache
-<VirtualHost *:80>
-	ServerName blog.toreanderson.no
-	ServerAlias blog.fud.no
-	ProxyPass "/" "http://toreanderson.github.io/"
-	ProxyPassReverse "/" "http://toreanderson.github.io/"
-</VirtualHost>
-````
