@@ -3,5 +3,10 @@ url: http://blog.toreanderson.no
 title: ~tore
 tagline: Tore Anderson's technology blog
 description: Various musings about technology. Probably mostly interesting for network engineers, server administrators and so on. Send feedback via Twitter (@toreanderson) or e-mail (tore@fud.no).
-gems: [jekyll-paginate]
-paginate: 5
+encoding: utf-8
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
