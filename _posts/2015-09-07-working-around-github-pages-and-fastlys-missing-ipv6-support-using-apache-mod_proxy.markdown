@@ -65,7 +65,7 @@ by creating a new file `/etc/apache2/sites-enabled/http_blog.fud.no.conf` with
 the contents below, before reloading the configuration with the command
 `apache2ctl graceful`.
 
-````apache
+````
 <VirtualHost *:80>
 	ServerName blog.toreanderson.no
 	ServerAlias blog.fud.no
