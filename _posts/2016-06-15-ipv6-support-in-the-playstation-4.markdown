@@ -105,7 +105,7 @@ I did find a couple of bugs too:
   the DNS server or the HTTP call-home web server, which doesn't work. This
   suggests that there is a bug in the PS4's [default address
   selection](http://tools.ietf.org/html/rfc6724) logic, or that it failed to
-  activate its SLAAC- or DHCPv6-assigned addres. Simply re-connecting to thet
+  activate its SLAAC- or DHCPv6-assigned address. Simply re-connecting to the
   network would usually resolve this issue.
 * If address assignment is SLAAC-only, and the advertised prefix is off-link,
   no IPv6 Internet traffic is seen. In this case, the PS4 does not even start
