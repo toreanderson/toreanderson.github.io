@@ -109,7 +109,7 @@ Vodafone is deliberately blocking visitors from using of IPv6 on their network.
 For operators such as Tele 2 and Telenor, this is not such a big deal, as
 dual-stack still «works» by falling back on IPv4-only connectivity. Operators
 using [464XLAT](https://tools.ietf.org/html/rfc6877), on the other hand, will
-likely find Vodafone's behavious hugely problematic.
+likely find Vodafone's behaviour hugely problematic.
 
 ### [Telekom](https://www.telekom.ro) - MCCMNCs 22603 (2G) and 22606 (3G)
 
