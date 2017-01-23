@@ -18,7 +18,7 @@ The previous posts in this series are:
 * [IPv6 roaming in Belgium and
   Romania](/2017/01/09/ipv6-roaming-in-belgium-and-romania.html)
 
-These posts contain some more technical background about the testing
+Those posts contain some more technical background about the testing
 methodology, so I suggest you skim through them in order to better interpret
 the test results in this post.
 
@@ -36,8 +36,8 @@ the test results in this post.
 | Telenor Norway | 4G   | N/A              | N/A                  |
 
 I was not able to get 4G coverage with any of my SIM cards in this network,
-which probably means that neither Tele 2 nor Telenor has a 4G roaming agreement
-with O2.
+which probably means that neither Tele 2 nor Telenor have a 4G roaming
+agreement with O2.
 
 While in 2G and 3G coverage Tele 2 and Telenor's HLR/HSS blacklisting trick
 comes into play.  (See the [*IPv6 roaming in Belgium and
@@ -56,8 +56,8 @@ explanation of what that trick is.)
 | Telenor Norway | 4G   | Works perfectly  | IPv4-only connection |
 
 In 2G and 3G coverage this looks like the standard HLR/HSS blacklisting trick.
-However the 4G behaviour is very unusual, as the blacklisting trick does not
-apply here.
+However the 4G behaviour is very unusual (as the blacklisting trick is specific
+to 2G and 3G).
 
 IPv6-only PDP contexts work fine with my Telenor SIM card, but not with my Tele
 2 one. My phone logs this latter failure as being due to an *unknown/invalid
