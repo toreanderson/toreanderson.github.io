@@ -3,6 +3,11 @@ published: true
 title: Working around GitHub Pages and Fastly's missing IPv6 support using Apache mod_proxy
 layout: post
 ---
+
+_**UPDATE 2017-07-31**: The information in this post is no longer accurate;
+[GitHub Pages and Fastly now do support
+IPv6](/2017/07/30/update-ghp-fastly-ipv6.html)._
+
 ## The problem
 
 As I noted in my [previous post](/2015/08/29/first-post.html), [GitHub

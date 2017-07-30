@@ -40,6 +40,10 @@ contents of the backend Git repo. Tinypress also provides a web interface where
 I can create or edit posts, which I think will prove convenient from time to
 time.
 
+_**UPDATE 2017-07-31**: The information below is no longer accurate; [GitHub
+Pages and Fastly now do support
+IPv6](/2017/07/30/update-ghp-fastly-ipv6.html)._
+
 So far so good. The one thing that's missing, is IPv6 support. The GitHub Pages
 service, or more precisely its CDN provider [Fastly](https://www.fastly.com/),
 does not appear to support IPv6 yet:
