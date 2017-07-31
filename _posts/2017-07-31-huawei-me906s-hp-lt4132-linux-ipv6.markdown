@@ -7,16 +7,16 @@ layout: post
 I recently purchased a new laptop, an [HP EliteBook 820
 G4](http://www8.hp.com/us/en/products/laptops/product-detail.html?oid=11122281).
 When ordering, I was given the choice of two different LTE WWAN modems: the _HP
-lt4120_ and the _HP lt4132_. The former is manufactured by Foxconn, while the
-latter is a rebranded [_Huawei
+lt4120_ and the _HP lt4132_. The former is a rebranded _Foxconn T77W595_, while
+the latter is a rebranded [_Huawei
 ME906s-158_](http://consumer.huawei.com/solutions/m2m-solutions/en/products/tech-specs/me906s-158-en.htm).
 
 Both modems cost about the same and there were reports of people getting them
 both working under Linux, so it didn't seem to matter much which of them I
 chose. I eventually decided on the _lt4132_, the primary reason being that its
 [specifications](http://consumer.huawei.com/solutions/m2m-solutions/en/products/tech-specs/me906s-158-en.htm)
-clearly state that it supports IPv6. The _lt4132_ seemed like the safe choice,
-as I was unable to easily confirm that the _lt4120_ supported IPv6.
+clearly state that it supports IPv6. This made the _lt4132_ seem like the safe
+choice, as I was unable to easily confirm that the _lt4120_ supported IPv6.
 
 I was wrong. I _should_ have opted for the _lt4120_. Read on for the details.
 
