@@ -4,6 +4,9 @@ title: 'IPv6 roaming in Sweden'
 layout: post
 ---
 
+_**UPDATE 2017-10-15**: The information in this post is outdated, see [this
+post](/2017/10/15/ipv6-roaming-in-sweden.html) for an updated version._
+
 There has been much talk about IPv6 potentially causing problems for
 subscribers roaming between mobile networks. There's [an entire
 RFC](https://tools.ietf.org/html/rfc7445) dedicated to the possible failure
