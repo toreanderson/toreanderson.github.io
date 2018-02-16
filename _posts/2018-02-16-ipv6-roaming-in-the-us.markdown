@@ -56,7 +56,7 @@ The fact that IPv6 consistently fails on 2G/3G is in all likelihood due to
 Tele2/Telenor's
 [HLR](https://en.wikipedia.org/wiki/Network_switching_subsystem#Home_location_register_.28HLR.29)
 removing the IPv6 capabilities from my subscriber profile before transmitting
-it to the AT&T/T-Mobile's
+it to AT&T/T-Mobile's
 [vSGSN](https://en.wikipedia.org/wiki/GPRS_core_network#Serving_GPRS_support_node_.28SGSN.29).
 
 Tele2 and Telenor do this to forestall the possible IPv6-related failures
