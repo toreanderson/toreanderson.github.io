@@ -12,5 +12,6 @@ kramdown:
   syntax_highlighter: rouge
 gems:
   - jekyll-coffeescript
+  - jekyll-feed
   - jekyll-paginate
 paginate: 5
