@@ -4,6 +4,11 @@ title: "Huawei ME906s-158 (a.k.a. HP lt4132): Linux and IPv6 support (or lack th
 layout: post
 ---
 
+_**UPDATE 2018-12-01**: The parts about missing IPv6 support in this post is
+outdated, see [this
+post](/2018/12/01/huawei-me906s-hp-lt4132-enabling-ipv6.html) for updated
+information._
+
 I recently purchased a new laptop, an [HP EliteBook 820
 G4](http://www8.hp.com/us/en/products/laptops/product-detail.html?oid=11122281).
 When ordering, I was given the choice of two different LTE WWAN modems: the _HP
