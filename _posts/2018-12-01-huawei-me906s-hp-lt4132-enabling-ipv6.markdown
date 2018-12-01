@@ -54,8 +54,8 @@ particular profile. For example, if you have a SIM card issued by T-Mobile
 Netherlands (MCCMNC 20416), then the ME906s-158 will apply the Deutsche Telekom
 profile (`"26201"`).
 
-Unfortunately, the documentation offers no information on how the different
-PLMN profiles differ and how they change the way the module work.
+Unfortunately, the documentation offers no information on how the PLMN profiles
+differ and how they change the way the module work.
 
 My provider (Telenor Norway, MCCMNC 24201) is not present in the factory
 default list. In that case, the module appears to use the `"00000"` PLMN
@@ -72,7 +72,7 @@ The solution seems clear: I need to add my provider's MCCMNC to an IPv6-capable
 PLMN profile. The Deutsche Telekom one would probably work, but `"99999"`
 (*«Generic(IPV4V6)»*) seems like an even more appropriate choice.
 
-Adding MCCMNCs is done with `AT^PLMNLIST=1,"$PLMNProfile","$MCC"`, like so:
+Adding MCCMNCs is done with `AT^PLMNLIST=1,"$PLMNProfile","$MCCMNC"`, like so:
 
 ```
 AT^PLMNLIST=1,"99999","24201"
