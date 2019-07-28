@@ -1,17 +1,10 @@
-excerpt_separator: ""
-url: http://blog.toreanderson.no
 title: ~tore
-tagline: Tore Anderson's technology blog
-description: Various musings about technology. Probably mostly interesting for network engineers, server administrators and so on. Send feedback via Twitter (@toreanderson) or e-mail (tore@fud.no).
-encoding: utf-8
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  hard_wrap: false
-  syntax_highlighter: rouge
-gems:
-  - jekyll-coffeescript
-  - jekyll-feed
-  - jekyll-paginate
-paginate: 5
+description: Tore Anderson's technology blog
+author: Tore Anderson
+email: tore@fud.no
+github_username: toreanderson
+twitter_username: toreanderson
+
+theme: minima
+
+show_excerpts: true
