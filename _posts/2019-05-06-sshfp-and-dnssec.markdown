@@ -4,8 +4,6 @@ title: Validating SSH host keys with DNSSEC
 description: Validating SSH host keys with DNSSEC
 ---
 
-*(Note: this is a [repost of an article](https://www.redpill-linpro.com/techblog/2019/05/06/sshfp-and-dnssec.html) from the [Redpill Linpro techblog](https://www.redpill-linpro.com/techblog/).)*
-
 We have all done it. When SSH asks us this familiar question:
 
 ```console
@@ -171,3 +169,5 @@ You are also placing trust in the network path between the host and the recursiv
 This means that an attacker with the capability to hijack or otherwise interfere with both your SSH and DNS traffic could potentially set up a fraudulent SSH server for you to connect to, and make your recursive resolver lie about the SSH host keys being correct and valid according to DNSSEC. The SSH client will not be able to detect this situation on its own.
 
 In order to detect such attacks, it is necessary for your host to double-check the validity of answers received from the recursive resolver by performing local DNSSEC validation. How to set up this will be the subject of a future post here on the [Redpill Lipro techblog](https://www.redpill-linpro.com/techblog/). Stay tuned!
+
+*(Note: this is a [repost of an article](https://www.redpill-linpro.com/techblog/2019/05/06/sshfp-and-dnssec.html) from the [Redpill Linpro techblog](https://www.redpill-linpro.com/techblog/).)*
