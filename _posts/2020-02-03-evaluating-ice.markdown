@@ -101,4 +101,4 @@ GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj#d1e2001-1-1).
 I certainly do not appreciate companies not treating my personal data
 responsibly according to the GDPR, so I promptly sent a request to ice's data
 protection officer, requesting that they document when and how I gave these
-purported consents. It shall be interesting to see what they answer.
+alleged consents. It shall be interesting to see what they answer.
