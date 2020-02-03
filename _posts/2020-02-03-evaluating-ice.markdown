@@ -92,10 +92,10 @@ this interesting section on my profile page:
 
 ![Figure 2: Consents section in portal]({{site.post_image}}/evaluating-ice/figure2.png)
 
-This basically states that I have given consent (Norwegian: *samtykke*) to two
-different categories of marketing as well as to customer surveys. I am certain,
-however, that I was never asked to consent to any of these while signing up as
-a subscriber - thus making this a clear violation of [Article 7
+This basically states that I have given consents (Norwegian: *samtykker*) to
+two different categories of marketing as well as to customer surveys. I am
+certain, however, that I was never asked to consent to any of these while
+signing up as a subscriber - thus making this a clear violation of [Article 7
 GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj#d1e2001-1-1).
 
 I certainly do not appreciate companies not treating my personal data
