@@ -29,3 +29,5 @@ A workaround is to use a USB-A↔USB-C cable to connect the laptop to the monito
 Windows 10 is able to reliably suspend the laptop regardless of which USB cable is used, so there is probably a way to work around the problem in software too. I will update this post if I figure something out.
 
 In any case, if you have a HP Z-series monitor and are having the same issue (or even if you are *not*), I would be very happy to hear from you! Send me an e-mail or a Tweet; my contact details are found at the bottom of the page.
+
+For what it is worth, I also [wrote a post about this issue](https://h30434.www3.hp.com/t5/Desktop-Video-Display-and-Touch/Ghost-device-connected-to-Z32-built-in-USB-hub-causing/m-p/7847876) on the HP support forum.
