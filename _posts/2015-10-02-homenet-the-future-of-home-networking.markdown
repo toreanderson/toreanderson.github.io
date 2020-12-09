@@ -84,7 +84,7 @@ nitty-gritty details of how it all fits together.
 ## Running code: the Hnet project
 
 While it's clearly important to have the Homenet standard properly documented
-in RFCs, these documens aren't particularly useful on their own. At the end of
+in RFCs, these documents aren't particularly useful on their own. At the end of
 the day, it's the availability of functioning implementations of those RFCs,
 i.e., *running code*, that truly matters.
 
