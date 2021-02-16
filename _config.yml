@@ -10,3 +10,6 @@ theme: minima
 show_excerpts: true
 
 post_image: /images/
+
+plugins:
+  - jekyll-feed
