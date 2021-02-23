@@ -101,7 +101,7 @@ just an embed of
 starts working (using NAT64 for its Internet traffic). Fortnite, NRK TV,
 PlayStation Store and YouTube, on the other hand, still do not work.
 
-Lastly, if I re-enable DHCPv6 while leaving DNS64/NAT64 in place, it does not
+Lastly, if I re-enable DHCPv4 while leaving DNS64/NAT64 in place, it does not
 seem to be using IPv6 via NAT64 for much. PlayStation Store downloads, Fortnite,
 NRK TV and YouTube continue to use IPv4 only.
 
