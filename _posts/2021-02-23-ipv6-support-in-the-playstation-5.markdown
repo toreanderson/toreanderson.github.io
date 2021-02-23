@@ -53,8 +53,9 @@ Some other things that appear to be IPv4-only include:
 
 ## Technical implementation details
 
-* It does not support IPv6-only networks. If there's no DHCPv4 service on the
-  network, it will claim that the network connection failed.
+* It does not realy support IPv6-only networks. If there's no DHCPv4 service on
+  the network, it will claim that the network connection failed. But Netflix
+  works regardless, see below.
 * It supports SLAAC, the RA *RDNSS Option* and DHCPv6 – both stateful and
   stateless.
 * If no IPv6 DNS server is being provided by the RA *RDNSS Option* or DHCPv6 it
@@ -82,6 +83,29 @@ Some other things that appear to be IPv4-only include:
 The PS5 was running system software version 20.02-2.50.00.08-00.00.00.0.1
 during my testing.
 
+## IPv6-only and DNS64/NAT64
+
+If there is no DHCPv4 service on the LAN, the network settings UI will say
+**Failed** for both *Wired LAN 1* and *Internet connection*. In spite of that,
+the *View Connection Status* page does show an IPv6 address, DNS server and
+gateway. Not much work in this state, I mostly encounter errors saying *You're
+offline*, *No Internet connection available*, and so forth. The exception is the
+Netflix app, which continues to work just fine! (It is now using the system IPv6
+DNS server instead of 8.8.8.8.)
+
+If I keep DHCPv4 disabled but start advertising a DNS64-enabled DNS server, the
+PS5 still claims that *Wired LAN 1* and *Internet connection* is **Failed**.
+However the *View PlayStation Network Status* page has begun working (this is
+just an embed of
+[https://status.playstation.com](https://status.playstation.com)). Twitch also
+starts working (using NAT64 for its Internet traffic). Fortnite, NRK TV,
+PlayStation Store and YouTube, on the other hand, still do not work.
+
+Lastly, if I re-enable DHCPv6 while leaving DNS64/NAT64 in place, it does not
+seem to be using IPv6 via NAT64 for much. PlayStation Store downloads, Fortnite,
+NRK TV and YouTube continue to use IPv4 only.
+
+
 ## Conclusion
 
 The PS5 does support IPv6, and the Netflix app proves that IPv6 connectivity is
@@ -89,12 +113,16 @@ available for use. Apart from Netflix, though, there is not much use of IPv6.
 That goes both for the system software and its bundled apps, as well as for
 third-party apps and games.
 
-Some of that might be attributable to a lack of IPv6 support on the server
-side, as evidenced by `IN AAAA` queries for hostnames that have no IPv6
-addresses.
+Some of that might be attributable to a lack of IPv6 support on the server side,
+as evidenced by `IN AAAA` queries for hostnames that have no IPv6 addresses. On
+the other hand, when I use DNS64 to make those `IN AAAA` queries be answered, it
+doesn't really make much of a difference – IPv4 is still preferred most of the
+time.
 
-Other times it appears to be caused by the software in question not making any
-`IN AAAA` queries in the first place. The YouTube app is a good example of
-this; it is well known that the YouTube servers supports IPv6, but their PS5
-app never issues any `IN AAAA` queries, so it ends up using IPv4 for its video
-traffic.
+Furthermore, most of the PS5 apps and games I tested do not make any `IN AAAA`
+queries in the first place, so DNS64/NAT64 would not help in any case.
+
+Thus software upgrades would be necessary to make these apps and games fully
+IPv6 capable. The YouTube app is a good example of this; it is well known that
+the YouTube servers supports IPv6, but their PS5 app never issues any `IN AAAA`
+queries, so it ends up using IPv4 for its video traffic.
