@@ -87,7 +87,7 @@ approach. In no particular order:
   logging.
 * It allows for IPv4-only applications or devices to be hosted in an otherwise
   IPv6-only data centre. This is accomplished through an optional component
-  called a *SIIT-DC Edge Relay*. This is what is being decribed in [RFC
+  called a *SIIT-DC Edge Relay*. This is what is being described in [RFC
   7756](https://tools.ietf.org/html/rfc7756).
 
 ## The history of SIIT-DC
