@@ -10,8 +10,8 @@ IETF standards work — gathered from GitHub, GitLab, project AUTHORS files,
 OpenStack security advisories, and the IETF Datatracker. It spans 2006 to
 2026, is sourced from public records only, and is not necessarily exhaustive.
 
-78 entries so far: 60 pull/merge requests and Gerrit changes, 5 direct
-commits, 6 IETF RFCs, 4 own projects, and 2 CVEs credited, across 34
+79 entries so far: 61 pull/merge requests and Gerrit changes, 5 direct
+commits, 6 IETF RFCs, 4 own projects, and 2 CVEs credited, across 35
 third-party projects.
 
 | Date | Project | Contribution | Language |
@@ -83,7 +83,6 @@ third-party projects.
 | 2024-12-06 | [evpn_agent](https://github.com/toreanderson/evpn_agent) | OpenStack EVPN Agent (own project) | Python |
 | 2026-05-13 | [rclone](https://github.com/rclone/rclone/pull/9436) | jottacloud: support whitelabel service Phonero Sky — merged | Go |
 | 2026-07-10 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/996747) | Fix catalog zone AXFR lookup for non-default pools — open | Python |
-| 2026-07-10 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/996748) | Fix pool delete when it contains a catalog zone — open | Python |
 | 2026-07-10 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/996761) | Fix catalog zone TSIG key name to not include a trailing dot — open | Python |
 | 2026-07-21 | [OpenStack Puppet-Designate](https://review.opendev.org/c/openstack/puppet-designate/+/998124) | Add remaining default SOA parameters — open | Puppet |
 | 2026-07-25 | [nwipe](https://github.com/martijnvanbrummelen/nwipe/pull/780) | create_pdf: use smartctl -x instead of -a — merged | C |
@@ -94,3 +93,5 @@ third-party projects.
 | 2026-09-08 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/998103) | Use lowest priority ns_record as SOA MNAME — merged | Python |
 | 2026-09-11 | [Knot DNS](https://gitlab.nic.cz/knot/knot-dns/-/merge_requests/1911) | policy: opportunistically reuse trashed DNSSEC keys for recreated zones — open | C |
 | 2026-09-12 | [betterleaks](https://github.com/betterleaks/betterleaks/pull/351) | report: never print a raw secret when its exact location can't be verified — open | Go |
+| 2026-09-21 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/996748) | Fix pool delete when it contains a catalog zone — merged | Python |
+| 2026-09-21 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1279) | Stop hiding the newest version of an image — merged | Python |
