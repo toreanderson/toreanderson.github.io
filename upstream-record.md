@@ -10,8 +10,8 @@ IETF standards work — gathered from GitHub, GitLab, project AUTHORS files,
 OpenStack security advisories, and the IETF Datatracker. It spans 2006 to
 2026, is sourced from public records only, and is not necessarily exhaustive.
 
-90 entries so far: 72 pull/merge requests and Gerrit changes, 5 direct
-commits, 6 IETF RFCs, 4 own projects, and 2 CVEs credited, across 36
+97 entries so far: 79 pull/merge requests and Gerrit changes, 5 direct
+commits, 6 IETF RFCs, 4 own projects, and 2 CVEs credited, across 37
 third-party projects.
 
 | Date | Project | Contribution | Language |
@@ -95,6 +95,11 @@ third-party projects.
 | 2026-09-12 | [betterleaks](https://github.com/betterleaks/betterleaks/pull/351) | report: never print a raw secret when its exact location can't be verified — open | Go |
 | 2026-09-21 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/996748) | Fix pool delete when it contains a catalog zone — merged | Python |
 | 2026-09-21 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1279) | Stop hiding the newest version of an image — merged | Python |
+| 2026-09-24 | [OpenStack Designate-Tempest-Plugin](https://review.opendev.org/c/openstack/designate-tempest-plugin/+/1007109) | Stop treating an escaped backslash as invalid TXT data — open | Python |
+| 2026-09-24 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/1007110) | Validate TXT and SPF records with dnspython — open | Python |
+| 2026-09-24 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/1007111) | Include the reason in record data validation errors — open | Python |
+| 2026-09-24 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/1007133) | Reject malformed API input without logging a traceback — open | Python |
+| 2026-09-24 | [OpenStack Designate](https://review.opendev.org/c/openstack/designate/+/1007142) | Allow disabling SECONDARY zone support globally or per pool — open | Python |
 | 2026-09-25 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1284) | Derive os_distro schema values from libosinfo — merged | Python |
 | 2026-09-25 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1285) | Add os_type and os_admin_user to the meta schema — merged | Python |
 | 2026-09-25 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1286) | Derive image_build_date for latest versions — merged | Python |
@@ -104,5 +109,7 @@ third-party projects.
 | 2026-09-30 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1292) | Add hw_cdrom_bus to the meta schema — merged | Python |
 | 2026-09-30 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1293) | Derive min_disk from the image's virtual size — merged | Python |
 | 2026-09-30 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1294) | Add hw_qemu_guest_agent to the meta schema — merged | Python |
+| 2026-10-01 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1295) | Retire images whose provided_until date has passed — open | Python |
 | 2026-10-01 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1296) | Tolerate managed images without the manager's properties — merged | Python |
+| 2026-10-01 | [OSISM openstack-image-manager](https://github.com/osism/openstack-image-manager/pull/1297) | Apply definitions to existing images, not only to new imports — open | Python |
 | 2026-10-02 | [OpenStack SDK](https://review.opendev.org/c/openstack/openstacksdk/+/1008410) | image: Parse boolean string properties leniently — merged | Python |
